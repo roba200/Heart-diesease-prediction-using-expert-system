@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center">Heart Disease Prediction</h1>
+      <form method="POST" action="/" class="mt-4">
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" class="form-control" id="age" name="age" required>
+        </div>
+        <div class="form-group">
+          <label for="sex">Sex (1 = Male, 0 = Female)</label>
+          <input type="number" class="form-control" id="sex" name="sex" required>
+        </div>
+        <div class="form-group">
+          <label for="cp">Chest Pain Type (0-3)</label>
+          <input type="number" class="form-control" id="cp" name="cp" required>
+        </div>
+        <div class="form-group">
+          <label for="trestbps">Resting Blood Pressure (mm Hg)</label>
+          <input type="number" class="form-control" id="trestbps" name="trestbps" required>
+        </div>
+        <div class="form-group">
+          <label for="chol">Cholesterol (mg/dl)</label>
+          <input type="number" class="form-control" id="chol" name="chol" required>
+        </div>
+        <div class="form-group">
+          <label for="fbs">Fasting Blood Sugar (>120 mg/dl, 1 = True, 0 = False)</label>
+          <input type="number" class="form-control" id="fbs" name="fbs" required>
+        </div>
+        <div class="form-group">
+          <label for="restecg">Resting ECG Results (0-2)</label>
+          <input type="number" class="form-control" id="restecg" name="restecg" required>
+        </div>
+        <div class="form-group">
+          <label for="thalach">Max Heart Rate Achieved</label>
+          <input type="number" class="form-control" id="thalach" name="thalach" required>
+        </div>
+        <div class="form-group">
+          <label for="exang">Exercise-Induced Angina (1 = Yes, 0 = No)</label>
+          <input type="number" class="form-control" id="exang" name="exang" required>
+        </div>
+        <div class="form-group">
+          <label for="oldpeak">ST Depression</label>
+          <input type="number" step="0.1" class="form-control" id="oldpeak" name="oldpeak" required>
+        </div>
+        <div class="form-group">
+          <label for="slope">Slope of ST Segment (0-2)</label>
+          <input type="number" class="form-control" id="slope" name="slope" required>
+        </div>
+        <div class="form-group">
+          <label for="ca">Number of Major Vessels (0-3)</label>
+          <input type="number" class="form-control" id="ca" name="ca" required>
+        </div>
+        <div class="form-group">
+          <label for="thal">Thalassemia (0-3)</label>
+          <input type="number" class="form-control" id="thal" name="thal" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Predict</button>
+      </form>
+      {% if prediction is not none %}
+      <div class="alert alert-info mt-4" role="alert">
+        Prediction: {{ "Heart Disease" if prediction == 1 else "No Heart Disease" }}
+      </div>
+      {% endif %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
